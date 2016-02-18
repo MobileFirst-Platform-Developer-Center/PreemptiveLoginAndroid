@@ -8,14 +8,12 @@ import android.content.SharedPreferences;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
-import com.worklight.wlclient.api.WLAccessTokenListener;
 import com.worklight.wlclient.api.WLAuthorizationManager;
 import com.worklight.wlclient.api.WLClient;
 import com.worklight.wlclient.api.WLFailResponse;
 import com.worklight.wlclient.api.WLLoginResponseListener;
 import com.worklight.wlclient.api.WLLogoutResponseListener;
 import com.worklight.wlclient.api.challengehandler.WLChallengeHandler;
-import com.worklight.wlclient.auth.AccessToken;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,8 +21,8 @@ import org.json.JSONObject;
 /**
  * Created by nathanh on 18/02/16.
  */
-public class UserAuthChallengeHandler extends WLChallengeHandler {
-    private static String securityCheckName = "UserAuthSecurityCheck";
+public class UserLoginChallengeHandler extends WLChallengeHandler {
+    private static String securityCheckName = "UserLogin";
     private int remainingAttempts = -1;
     private String errorMsg = "";
     private Context context;
@@ -32,7 +30,7 @@ public class UserAuthChallengeHandler extends WLChallengeHandler {
 
     private LocalBroadcastManager broadcastManager;
 
-    private UserAuthChallengeHandler() {
+    private UserLoginChallengeHandler() {
         super(securityCheckName);
         context = WLClient.getInstance().getContext();
         broadcastManager = LocalBroadcastManager.getInstance(context);
@@ -67,8 +65,8 @@ public class UserAuthChallengeHandler extends WLChallengeHandler {
 
     }
 
-    public static UserAuthChallengeHandler createAndRegister(){
-        UserAuthChallengeHandler challengeHandler = new UserAuthChallengeHandler();
+    public static UserLoginChallengeHandler createAndRegister(){
+        UserLoginChallengeHandler challengeHandler = new UserLoginChallengeHandler();
         WLClient.getInstance().registerChallengeHandler(challengeHandler);
         return challengeHandler;
     }

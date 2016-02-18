@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -43,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         WLClient.createInstance(this);
 
         //Initialize the challenge handler
-        UserAuthChallengeHandler.createAndRegister();
+        UserLoginChallengeHandler.createAndRegister();
 
         //Initialize the UI elements
         usernameInput = (EditText)findViewById(R.id.usernameInput);
