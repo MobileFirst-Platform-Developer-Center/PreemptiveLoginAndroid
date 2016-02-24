@@ -21,7 +21,7 @@ UserAuthentication Security Check adapter: https://github.com/MobileFirst-Platfo
 IBM MobileFirst Platform Foundation 8.0
 
 ### License
-Copyright 2015 IBM Corp.
+Copyright 2016 IBM Corp.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
