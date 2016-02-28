@@ -8,9 +8,9 @@ https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authenticat
 
 ### Usage
 
-1. Use either Maven or MobileFirst Developer CLI to [build and deploy the available `ResourceAdapter` and `UserAuth` adapters](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/creating-adapters/).
+1. Use either Maven or MobileFirst Developer CLI to [build and deploy the available `ResourceAdapter` and `UserLogin` adapters](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/creating-adapters/).
 2. From a command-line window, navigate to the project's root folder and run the command: `mfpdev app register`.
-3. In the MobileFirst console, under **Applications** → **PreemptiveLoginAndroid** → **Security** → **Map scope elements to security checks.**, add a mapping from `accessRestricted` to `UserAuthSecurityCheck`.
+3. In the MobileFirst console, under **Applications** → **PreemptiveLoginAndroid** → **Security** → **Map scope elements to security checks.**, add a mapping from `accessRestricted` to `UserLoginSecurityCheck`.
 4. Back in the command-line:
     - Add a platform by running the `cordova platform add` command.
     - Run the Cordova application by running the `cordova run` command.
