@@ -109,6 +109,9 @@ public class ProtectedActivity extends AppCompatActivity {
             @Override
             public void onReceive(Context context, Intent intent) {
                 Intent login = new Intent(_this, LoginActivity.class);
+                //Make sure to start with the clean stack
+                login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                login.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 _this.startActivity(login);
             }
         };
@@ -140,11 +143,11 @@ public class ProtectedActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop() {
-        Log.d(DEBUG_NAME, "onStop");
+    protected void onPause() {
+        Log.d(DEBUG_NAME, "onPause");
         LocalBroadcastManager.getInstance(this).unregisterReceiver(logoutReceiver);
         LocalBroadcastManager.getInstance(this).unregisterReceiver(loginRequiredReceiver);
-        super.onStop();
+        super.onPause();
     }
 
     @Override
