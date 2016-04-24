@@ -20,7 +20,7 @@ import com.worklight.wlclient.api.WLClient;
  * limitations under the License.
  */
 
-public class MyApplication extends Application{
+public class PreemptiveLoginApplication extends Application{
 
     @Override
     public void onCreate() {
