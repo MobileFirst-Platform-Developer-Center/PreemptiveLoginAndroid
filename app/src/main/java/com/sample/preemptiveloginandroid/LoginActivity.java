@@ -53,8 +53,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         _this = this;
-        //Initialize the MobileFirst SDK. This needs to happen just once.
-        WLClient.createInstance(this);
 
         //Initialize the challenge handler
         UserLoginChallengeHandler.createAndRegister();

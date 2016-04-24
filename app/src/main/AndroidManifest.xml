@@ -26,7 +26,8 @@ limitations under the License.
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name="com.sample.preemptiveloginandroid.MyApplication">
         <activity android:name="com.worklight.wlclient.ui.UIActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
