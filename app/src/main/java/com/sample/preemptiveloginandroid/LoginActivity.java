@@ -54,9 +54,6 @@ public class LoginActivity extends AppCompatActivity {
 
         _this = this;
 
-        //Initialize the challenge handler
-        UserLoginChallengeHandler.createAndRegister();
-
         //Initialize the UI elements
         usernameInput = (EditText)findViewById(R.id.usernameInput);
         passwordInput = (EditText)findViewById(R.id.passwordInput);
