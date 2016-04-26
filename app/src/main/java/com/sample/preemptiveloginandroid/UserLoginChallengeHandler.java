@@ -51,7 +51,7 @@ public class UserLoginChallengeHandler extends WLChallengeHandler {
         SharedPreferences preferences = context.getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.remove(Constants.PREFERENCES_KEY_USER);
-        editor.commit();
+        editor.apply();
 
         //Receive login requests
         broadcastManager.registerReceiver(new BroadcastReceiver() {
@@ -140,7 +140,7 @@ public class UserLoginChallengeHandler extends WLChallengeHandler {
             SharedPreferences preferences = context.getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = preferences.edit();
             editor.putString(Constants.PREFERENCES_KEY_USER, identity.getJSONObject("user").toString());
-            editor.commit();
+            editor.apply();
         } catch (JSONException e) {
             e.printStackTrace();
         }

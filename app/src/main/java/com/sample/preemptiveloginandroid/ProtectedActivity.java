@@ -44,8 +44,7 @@ import java.net.URISyntaxException;
 public class ProtectedActivity extends AppCompatActivity {
 
     private ProtectedActivity _this;
-    private Button getBalanceButton, logoutButton;
-    private TextView resultTextView, helloLabel;
+    private TextView resultTextView;
     private BroadcastReceiver logoutReceiver, loginRequiredReceiver;
     private final String DEBUG_NAME = "ProtectedActivity";
 
@@ -56,16 +55,16 @@ public class ProtectedActivity extends AppCompatActivity {
 
         _this = this;
 
-        getBalanceButton = (Button)findViewById(R.id.getBalance);
-        logoutButton = (Button)findViewById(R.id.logout);
+        Button getBalanceButton = (Button) findViewById(R.id.getBalance);
+        Button logoutButton = (Button) findViewById(R.id.logout);
         resultTextView = (TextView)findViewById(R.id.resultText);
-        helloLabel = (TextView)findViewById(R.id.helloLabel);
+        TextView helloLabel = (TextView) findViewById(R.id.helloLabel);
 
         //Show the display name
         try {
             SharedPreferences preferences = _this.getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
             JSONObject user = new JSONObject(preferences.getString(Constants.PREFERENCES_KEY_USER,null));
-            helloLabel.setText("Hello " + user.getString("displayName"));
+            helloLabel.setText(getString(R.string.hello_user, user.getString("displayName")));
         } catch (JSONException e) {
             e.printStackTrace();
         }

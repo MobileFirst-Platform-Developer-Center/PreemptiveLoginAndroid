@@ -30,15 +30,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.worklight.wlclient.api.WLClient;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText usernameInput, passwordInput;
-    private Button loginButton;
     private TextView errorMsgDisplay, remainingAttemptsDisplay;
 
     private BroadcastReceiver loginErrorReceiver, loginRequiredReceiver, loginSuccessReceiver;
@@ -59,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordInput = (EditText)findViewById(R.id.passwordInput);
         errorMsgDisplay = (TextView)findViewById(R.id.errorMsg);
         remainingAttemptsDisplay = (TextView)findViewById(R.id.remainingAttempts);
-        loginButton = (Button)findViewById(R.id.login);
+        Button loginButton = (Button) findViewById(R.id.login);
 
         //Login Button behavior
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         //Display remaining attempts
                         if(intent.getIntExtra("remainingAttempts",-1) > -1) {
-                            remainingAttemptsDisplay.setText("Remaning attempts: " + intent.getIntExtra("remainingAttempts",-1));
+                            remainingAttemptsDisplay.setText(getString(R.string.remaining_attempts, intent.getIntExtra("remainingAttempts",-1)));
                         }
                     }
                 };
