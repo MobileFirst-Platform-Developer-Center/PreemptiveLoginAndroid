@@ -1,7 +1,7 @@
 IBM MobileFirst Platform Foundation
 ===
 ## PreemptiveLoginAndroid
-A sample application demonstrating use preemptive login APIs.
+A sample application demonstrating implementation of Preemptive Login.
 
 ### Tutorials
 https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/user-authentication/
