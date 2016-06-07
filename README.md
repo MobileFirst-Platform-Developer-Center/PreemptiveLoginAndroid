@@ -1,14 +1,14 @@
 IBM MobileFirst Platform Foundation
 ===
 ## PreemptiveLoginAndroid
-A sample application demonstrating use preemptive login APIs.
+A sample application demonstrating implementation of Preemptive Login.
 
 ### Tutorials
 https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/user-authentication/
 
 ### Usage
 
-1. Use either Maven or MobileFirst Developer CLI to [build and deploy the available `ResourceAdapter` and `UserLogin` adapters](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/creating-adapters/).
+1. Use either Maven, MobileFirst CLI or your IDE of choice to [build and deploy the available `ResourceAdapter` and `UserLogin` adapters](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/creating-adapters/).
 
  The UserAuthentication Security Check adapter can be found in https://github.com/MobileFirst-Platform-Developer-Center/SecurityCheckAdapters/tree/release80.
 
