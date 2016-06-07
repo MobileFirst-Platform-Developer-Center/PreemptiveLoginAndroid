@@ -28,12 +28,12 @@ import com.worklight.wlclient.api.WLClient;
 import com.worklight.wlclient.api.WLFailResponse;
 import com.worklight.wlclient.api.WLLoginResponseListener;
 import com.worklight.wlclient.api.WLLogoutResponseListener;
-import com.worklight.wlclient.api.challengehandler.WLChallengeHandler;
+import com.worklight.wlclient.api.challengehandler.SecurityCheckChallengeHandler;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class UserLoginChallengeHandler extends WLChallengeHandler {
+public class UserLoginChallengeHandler extends SecurityCheckChallengeHandler {
     private static String securityCheckName = "UserLogin";
     private int remainingAttempts = -1;
     private String errorMsg = "";
