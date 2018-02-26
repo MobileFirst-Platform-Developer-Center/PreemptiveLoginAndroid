@@ -134,6 +134,22 @@ public class ProtectedActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume(){
+        Log.d(DEBUG_NAME, "onResume" );
+        SharedPreferences preferences = _this.getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
+        JSONObject user = null;
+        try {
+            user = new JSONObject(preferences.getString(Constants.PREFERENCES_KEY_USER,null));
+            TextView helloLabel = (TextView) findViewById(R.id.helloLabel);
+            helloLabel.setText(getString(R.string.hello_user, user.getString("displayName")));
+        } catch (JSONException e)
+        {
+          e.printStackTrace();
+        }
+        super.onResume();
+    }
+
+    @Override
     protected void onStart() {
         Log.d(DEBUG_NAME, "onStart");
         super.onStart();
